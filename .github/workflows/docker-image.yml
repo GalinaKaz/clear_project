@@ -24,7 +24,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
           push: true
-          tags: galinakaz/app-dima:1.0
+          tags: galinakaz/app-dima:$GITHUB_SHA
           
           
 
