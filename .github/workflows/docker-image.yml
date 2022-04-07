@@ -34,17 +34,4 @@ jobs:
       run: |-
         docker push "galinakaz/app-dima:$GITHUB_SHA"
     
-  Kubernetes:
-    runs-on: ec2-44-203-127-225.compute-1.amazonaws.com
-    steps:
-    - name: Login to my computer
-      uses: docker/login-action@v1 
-      with:
-          username: ${{ secrets.my_USERNAME }}
-          password: ${{ secrets.my_TOKEN }}
-          
-    # Deploy the Docker image to microk8s kubernetes Cluster on my computer
-    - name: Deploy
-      run: |-
-        echo env
 
