@@ -33,6 +33,18 @@ jobs:
     - name: Publish
       run: |-
         docker push "galinakaz/app-dima:$GITHUB_SHA"
+    
+  Kubernetes:
+    runs-on: 10.100.102.73
+    steps:
+    - name: Login to my computer
+      uses: docker/login-action@v1 
+      with:
+          username: ${{ secrets.my_USERNAME }}
+          password: ${{ secrets.my_TOKEN }}
           
-          
+    # Deploy the Docker image to microk8s kubernetes Cluster on my computer
+    - name: Deploy
+      run: |-
+        echo env
 
